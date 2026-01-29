@@ -1,0 +1,495 @@
+/* App.css - Main application styles */
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.App-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.App-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.App-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: slideDown 0.8s ease-out 0.2s backwards;
+}
+
+.admin-toggle-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-toggle-btn:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+.App-main {
+  padding: 50px 20px;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+section:hover {
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
+  transform: translateY(-5px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  padding: 20px 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(238, 90, 111, 0.3);
+  animation: shake 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.error-message::before {
+  content: '⚠️';
+  font-size: 1.5rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.upload-section {
+  max-width: 600px;
+}
+
+.summary-section,
+.charts-section,
+.data-table-section {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.history-section {
+  margin-top: 30px;
+}
+
+.history-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.dataset-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.dataset-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dataset-item {
+  padding: 18px 24px;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea, #764ba2) border-box;
+  border-radius: 15px 0 0 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.dataset-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.dataset-item:hover::before {
+  left: 100%;
+}
+
+.dataset-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.delete-dataset-btn {
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.delete-dataset-btn:hover {
+  background: linear-gradient(135deg, #ee5a6f 0%, #ff6b6b 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.dataset-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.dataset-item {
+  padding: 15px 20px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.delete-dataset-btn {
+  padding: 10px 12px;
+  background: #f44336;
+  color: white;
+  border: 2px solid #ddd;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-dataset-btn:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+.dataset-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.dataset-item.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dataset-item span {
+  font-weight: 600;
+}
+
+.dataset-item small {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.header-buttons {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dark-mode-toggle {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+  background: white;
+  transform: scale(1.1) rotate(20deg);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+}
+
+body.dark-mode .App-main {
+  background: transparent;
+}
+
+body.dark-mode section {
+  background: rgba(30, 30, 45, 0.95);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  color: #e0e0e0;
+}
+
+body.dark-mode .data-table h2,
+body.dark-mode .summary h2,
+body.dark-mode .charts h2 {
+  color: #a8b4ff;
+}
+
+body.dark-mode table {
+  background: rgba(20, 20, 30, 0.8);
+  color: #e0e0e0;
+}
+
+body.dark-mode table td {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: #d0d0d0;
+}
+
+body.dark-mode table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+body.dark-mode .search-input,
+body.dark-mode .filter-select {
+  background: rgba(30, 30, 45, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+  color: #e0e0e0;
+}
+
+body.dark-mode .table-controls {
+  background: rgba(30, 30, 45, 0.5);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+body.dark-mode .chart-container {
+  background: rgba(30, 30, 45, 0.8);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+body.dark-mode .type-item {
+  background: rgba(30, 30, 45, 0.8);
+  border-left-color: #a8b4ff;
+}
+
+body.dark-mode .type-name {
+  color: #e0e0e0;
+}
+
+body.dark-mode .equipment-name {
+  color: #a8b4ff;
+}
+
+body.dark-mode .error-message {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .App-header p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .dataset-item {
+    min-width: 100%;
+  }
+
+  .header-buttons {
+    position: static;
+    margin-top: 15px;
+    justify-content: center;
+  }
+}
+
+/* Loading State */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

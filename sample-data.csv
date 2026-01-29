@@ -1,0 +1,16 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Pump-A1,Centrifugal Pump,150.5,30.2,65.3
+Pump-B2,Reciprocating Pump,120.0,45.5,58.2
+Compressor-C1,Rotary Compressor,200.3,80.0,72.1
+Compressor-D1,Centrifugal Compressor,180.5,75.5,68.9
+Turbine-E1,Steam Turbine,250.0,100.0,85.5
+Heat Exchanger-F1,Plate Heat Exchanger,95.5,25.0,50.0
+Heat Exchanger-G1,Shell and Tube,110.0,28.5,55.2
+Filter-H1,Bag Filter,75.0,15.0,40.0
+Separator-I1,Centrifugal Separator,130.0,35.0,60.5
+Reactor-J1,CSTR Reactor,140.5,50.0,70.0
+Reactor-K1,Batch Reactor,125.0,48.0,68.5
+Distillation-L1,Fractionating Column,160.0,55.0,78.0
+Absorption-M1,Packed Column,145.0,40.0,65.0
+Dryer-N1,Rotary Dryer,90.0,20.0,45.0
+Evaporator-O1,Multiple Effect,170.0,60.0,82.0
