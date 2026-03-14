@@ -40,7 +40,7 @@ class LoginDialog(QDialog):
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.login)
         buttons.rejected.connect(self.reject)
-        
+         
         layout.addRow(buttons)
         self.setLayout(layout)
     
