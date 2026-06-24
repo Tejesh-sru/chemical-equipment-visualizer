@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QFont, QColor, QPalette
-import requests
+import requests 
 import json
 from datetime import datetime
 import matplotlib.pyplot as plt
